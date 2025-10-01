@@ -25,11 +25,19 @@ Open `http://localhost:8000`
 
 *Note: Requires local server due to CORS*
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- HTML5 Canvas + JavaScript
-- TensorFlow.js CNN model
-- Google Quick Draw dataset
+- **Frontend**: HTML5 Canvas, CSS3, Vanilla JavaScript
+- **AI/ML**: TensorFlow.js CNN model (15MB)
+- **Dataset**: MNIST, MNIST-FASHION, & Google's Quick Draw (365 classes)
+- **Model**: Convolutional Neural Network trained on 28x28 grayscale images
+
+## 📊 Technical Details
+
+- **Input**: 280x280 canvas → preprocessed to 28x28 grayscale
+- **Model**: CNN with ~1M parameters
+- **Classes**: 365 categories from 3 different datasets
+- **Browser Support**: Chrome, Firefox, Safari, Edge (ES6+ required)
 
 ## Drawing Tips
 
