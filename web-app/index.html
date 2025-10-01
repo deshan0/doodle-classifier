@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Doodle Classifier</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.15.0/dist/tf.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+    <h1>🎨 AI Doodle Classifier</h1>
+    <p>Draw something and watch the AI guess what it is!</p>
+</header>
+
+        <div class="main-content">
+            <!-- Drawing Section -->
+            <div class="drawing-section">
+                <div class="canvas-container">
+                    <canvas id="drawingCanvas" width="280" height="280"></canvas>
+                    <div class="canvas-overlay" id="loadingOverlay">
+                        <div class="loading-spinner"></div>
+                        <p>Loading AI Model...</p>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="clearBtn" class="control-btn clear-btn">
+                        <span class="btn-icon">🗑️</span>
+                        Clear Canvas
+                    </button>
+                    <button id="undoBtn" class="control-btn undo-btn">
+                        <span class="btn-icon">↶</span>
+                        Undo
+                    </button>
+                </div>
+
+                <div class="drawing-tips">
+                    <h4>💡 Drawing Tips:</h4>
+                    <ul>
+                        <li>Draw simple, recognizable shapes</li>
+                        <li>Use the full canvas space</li>
+                        <li>Draw clear, connected lines</li>
+                        <li>One object per drawing works best</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Add this inside the container div -->
+<div class="version-badge">v1.0</div>
+
+            <!-- Predictions Section -->
+            <div class="predictions-section">
+                <div class="predictions-header">
+                    <h3>🤖 AI Predictions</h3>
+                    <div class="model-status" id="modelStatus">
+                        <span class="status-indicator loading"></span>
+                        <span class="status-text">Loading model...</span>
+                    </div>
+                </div>
+                
+                <div class="predictions-container" id="predictionsContainer">
+                    <div class="prediction-item placeholder">
+                        <span class="rank">1.</span>
+                        <span class="label">Start drawing!</span>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+
+                <div class="prediction-stats" id="predictionStats" style="display: none;">
+                    <div class="stat">
+                        <span class="stat-label">Confidence:</span>
+                        <span class="stat-value" id="topConfidence">-</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Processing:</span>
+                        <span class="stat-value" id="processingTime">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Powered by TensorFlow.js | Trained on Quick Draw Dataset</p>
+            <div class="footer-links">
+                <a href="https://github.com/yourusername/doodle-classifier" target="_blank">
+                    <span class="link-icon">📁</span> View Code
+                </a>
+                <a href="https://quickdraw.withgoogle.com/" target="_blank">
+                    <span class="link-icon">🎨</span> Quick Draw
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
